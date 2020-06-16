@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">User Subcribe</string>
+    <string name="user">Имя пользователя</string>
+    <string name="userInput"></string>
+    <string name="mail">Электронный адрес</string>
+    <string name="btnOK">ОК</string>
+    <string name="btnCancel">Чистить</string>
+    <string name="result">Подписка на рассылку успешно оформлена для пользователя %s на электронный адрес %s </string>
+</resources>
