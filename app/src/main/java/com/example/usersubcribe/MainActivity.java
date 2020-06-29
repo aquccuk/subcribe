@@ -5,41 +5,42 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn1;
-    Button btn2;
-    TextView textView1;
-    TextView userInput;
-    TextView userMail;
-    private int user;
+    private Button btnOK;
+    private Button btnCancel;
+    private TextView resultText;
+    private EditText userInput;
+    private EditText userMail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn1= findViewById(R.id.btnOK);
-        btn2= findViewById(R.id.btnCancel);
-        textView1= findViewById(R.id.result);
+        btnOK= findViewById(R.id.btnOK);
+        btnCancel= findViewById(R.id.btnCancel);
+        resultText= findViewById(R.id.result);
         userInput= findViewById(R.id.user);
         userMail= findViewById(R.id.mail);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
+        btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView1.setText(String.format(getString(R.string.result), userInput.getText(), userMail.getText()));
+                resultText.setText(String.format(getString(R.string.result), userInput.getText().toString(), userMail.getText().toString()));
             }
         });
-        btn2.setOnClickListener(new View.OnClickListener() {
+        btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user = R.id.user;
-                userInput.setText(null);
-                userMail.setText(null);
-                textView1.setText("");
+
+                userInput.getText().clear();
+                userMail.getText().clear();
+                resultText.setText("");
             }
         });
     }
